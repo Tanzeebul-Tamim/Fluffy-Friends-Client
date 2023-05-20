@@ -47,7 +47,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div>
               <img
-                style={{ height: "60px" }}
+                style={{ height: "70px" }}
                 src="https://i.ibb.co/ByY5P3X/icon.png"
                 alt=""
               />

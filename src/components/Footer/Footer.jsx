@@ -6,30 +6,30 @@ const Footer = () => {
     <div>
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
-          <span className="footer-title">Our Location</span>
+          <span className="footer-title text-pink-800">Our Location</span>
           <LeafletMap></LeafletMap>
         </div>
         <div>
-          <span className="footer-title">Opening Hours</span>
+          <span className="footer-title text-pink-800">Opening Hours</span>
           <span>Monday - Friday: 8:00 AM - 10:00 PM</span>
           <span>Saturday: 10:00 AM - 11:00 PM</span>
           <span>Sunday: 12:00 PM - 9:00 PM</span>
         </div>
         <div>
-          <span className="footer-title">Services</span>
+          <span className="footer-title text-pink-800">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
         <div>
-          <span className="footer-title">Contact Us</span>
+          <span className="footer-title text-pink-800">Contact Us</span>
           <span>Level-4, 34, Awal Centre, Banani <br />Dhaka</span>
           <span> Phone: +8801715-456789</span>
           <span>Email:{" "}<a className="underline" id="email" href="">info@bengal-chefs-pantry.com</a></span>
         </div>
         <div>
-          <span className="footer-title">Legal</span>
+          <span className="footer-title text-pink-800">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
@@ -38,7 +38,7 @@ const Footer = () => {
       <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <img
-            style={{ height: "60px" }}
+            style={{ height: "50px" }}
             src="https://i.ibb.co/ByY5P3X/icon.png"
             alt=""
           />
