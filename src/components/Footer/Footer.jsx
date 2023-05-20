@@ -6,30 +6,30 @@ const Footer = () => {
     <div>
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
-          <span className="footer-title text-pink-800">Our Location</span>
+          <span className="footer-title text-pink-800 lg:text-pink-100">Our Location</span>
           <LeafletMap></LeafletMap>
         </div>
         <div>
-          <span className="footer-title text-pink-800">Opening Hours</span>
+          <span className="footer-title text-pink-800 lg:text-pink-100">Opening Hours</span>
           <span>Monday - Friday: 8:00 AM - 10:00 PM</span>
           <span>Saturday: 10:00 AM - 11:00 PM</span>
           <span>Sunday: 12:00 PM - 9:00 PM</span>
         </div>
         <div>
-          <span className="footer-title text-pink-800">Services</span>
+          <span className="footer-title text-pink-800 lg:text-pink-600">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
         <div>
-          <span className="footer-title text-pink-800">Contact Us</span>
+          <span className="footer-title text-pink-800 lg:text-pink-700">Contact Us</span>
           <span>Level-4, 34, Awal Centre, Banani <br />Dhaka</span>
           <span> Phone: +8801715-456789</span>
-          <span>Email:{" "}<a className="underline" id="email" href="">info@bengal-chefs-pantry.com</a></span>
+          <span>Email:{" "}<a className="underline" id="email" href="">info@fluffy-friends.com</a></span>
         </div>
         <div>
-          <span className="footer-title text-pink-800">Legal</span>
+          <span className="footer-title text-pink-800 lg:text-pink-800">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
@@ -52,7 +52,7 @@ const Footer = () => {
             © 2023 The FluffyFriends. All rights reserved. Designed by
             <a
               href="https://www.facebook.com/tanzeebul.tamim"
-              className="ms-1 font-bold underline"
+              className="ms-1 font-bold text-pink-600 underline"
             >
               Tanzeebul Tamim
             </a>

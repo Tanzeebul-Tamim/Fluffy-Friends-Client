@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import ActiveLink from "../../activeLink/ActiveLink";
 
 const Navbar = () => {
   return (
@@ -24,22 +25,22 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu text-xl font-bold menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link>Home</Link>
+              <ActiveLink to="/">Home</ActiveLink>
             </li>
             <li>
-              <Link>All Toys</Link>
+              <ActiveLink to="/allToys">All Toys</ActiveLink>
             </li>
             <li>
-              <Link>My Toys</Link>
+              <ActiveLink to="/myToys">My Toys</ActiveLink>
             </li>
             <li>
-              <Link>Add a Toy</Link>
+              <ActiveLink to="/addToy">Add a Toy</ActiveLink>
             </li>
             <li>
-              <Link>Blogs</Link>
+              <ActiveLink to="/blogs">Blogs</ActiveLink>
             </li>
           </ul>
         </div>
@@ -49,34 +50,34 @@ const Navbar = () => {
                 className="lg:h-20 w-full h-12"
                 src="https://i.ibb.co/ByY5P3X/icon.png"
               />
-            <span className="lg:text-4xl font-bold text-pink-500">
+            <span className="lg:text-4xl font-bold text-pink-600">
               FluffyFriends
             </span>
           </div>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu text-pink-500 menu-horizontal px-1">
+        <ul className="flex gap-8 text-xl font-extralight text-pink-600 menu-horizontal px-1">
           <li>
-            <Link>Home</Link>
+            <ActiveLink to="/">Home</ActiveLink>
           </li>
           <li>
-            <Link>All Toys</Link>
+            <ActiveLink to="/allToys">All Toys</ActiveLink>
           </li>
           <li>
-            <Link>My Toys</Link>
+            <ActiveLink to="/myToys">My Toys</ActiveLink>
           </li>
           <li>
-            <Link>Add a Toy</Link>
+            <ActiveLink to="/addToy">Add a Toy</ActiveLink>
           </li>
           <li>
-            <Link>Blogs</Link>
+            <ActiveLink to="/blogs">Blogs</ActiveLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         <Link to="/login">
-          <button className="btn bg-pink-500 border-0">Login</button>
+          <button className="btn bg-pink-600 border-0">Login</button>
         </Link>
         {/* <div className="tooltip tooltip-bottom" data-tip="hello">
           <div className="dropdown dropdown-end">

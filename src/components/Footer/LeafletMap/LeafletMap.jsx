@@ -11,7 +11,7 @@ const LeafletMap = () => {
   const mapRef = useRef();
 
   return (
-        <MapContainer scrollWheelZoom={false} center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
+        <MapContainer className="border border-red-500" scrollWheelZoom={false} center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
             <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
             <Marker position={[23.79382753409999, 90.40540631122356]}>
                 <Popup>
