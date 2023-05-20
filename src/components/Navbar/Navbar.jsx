@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="py-4 header px-6 navbar text-lg bg-base-200">
+    <div className="lg:py-4 header lg:px-6 navbar text-lg bg-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,14 +45,11 @@ const Navbar = () => {
         </div>
         <Link to="/">
           <div className="flex items-center">
-            <div>
               <img
-                style={{ height: "70px" }}
+                className="lg:h-20 w-full h-12"
                 src="https://i.ibb.co/ByY5P3X/icon.png"
-                alt=""
               />
-            </div>
-            <span className="text-4xl font-bold text-pink-500">
+            <span className="lg:text-4xl font-bold text-pink-500">
               FluffyFriends
             </span>
           </div>
@@ -81,7 +78,7 @@ const Navbar = () => {
         <Link to="/login">
           <button className="btn bg-pink-500 border-0">Login</button>
         </Link>
-        <div className="tooltip tooltip-bottom" data-tip="hello">
+        {/* <div className="tooltip tooltip-bottom" data-tip="hello">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 tooltip rounded-full">
@@ -103,7 +100,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
