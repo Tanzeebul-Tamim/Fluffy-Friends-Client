@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../providers/Authprovider";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Register = () => {
  
@@ -155,6 +156,12 @@ const Register = () => {
             <div className="form-control mt-6">
               <input type="submit" value="Register" className="btn text-white btn-primary"/>
             </div>
+            <p className="mt-3 ms-3">
+              Already have an account?{" "}
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <span className="font-bold text-red-500">Please Login</span>
+            </Link>
+          </p>
           </div>
         </form>
       </div>

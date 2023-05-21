@@ -3,15 +3,16 @@ import "./Navbar.css";
 import ActiveLink from "../../activeLink/ActiveLink";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 
 const Navbar = () => {
-
   const { user, logOut, loading } = useContext(AuthContext);
-  console.log(user)
+  console.log(user);
   const handleLogOut = () => {
-    logOut().then().catch(error => console.error(error));
-  }
+    logOut()
+      .then()
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="lg:py-4 header lg:px-6 navbar text-lg bg-base-200">
@@ -43,17 +44,25 @@ const Navbar = () => {
             <li>
               <ActiveLink to="/allToys">All Toys</ActiveLink>
             </li>
+            {user && (
+              <li>
+                <ActiveLink to="/myToys">My Toys</ActiveLink>
+              </li>
+            )}
             <li>
               <ActiveLink to="/blogs">Blogs</ActiveLink>
+            </li>
+            <li>
+              <ActiveLink to="/register">Register</ActiveLink>
             </li>
           </ul>
         </div>
         <Link to="/">
           <div className="flex items-center">
-              <img
-                className="lg:h-20 w-full h-12"
-                src="https://i.ibb.co/ByY5P3X/icon.png"
-              />
+            <img
+              className="lg:h-20 w-full h-12"
+              src="https://i.ibb.co/ByY5P3X/icon.png"
+            />
             <span className="lg:text-4xl font-bold text-pink-600">
               FluffyFriends
             </span>
@@ -68,6 +77,11 @@ const Navbar = () => {
           <li>
             <ActiveLink to="/allToys">All Toys</ActiveLink>
           </li>
+          {user && (
+            <li>
+              <ActiveLink to="/myToys">My Toys</ActiveLink>
+            </li>
+          )}
           <li>
             <ActiveLink to="/blogs">Blogs</ActiveLink>
           </li>
@@ -77,36 +91,41 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-       {
-        loading ? (<ReactLoading type={"cylon"} color={"#be154e"} height={'15%'} width={'15%'} />) :  
-        (user ? 
-        (<div className="tooltip tooltip-left" data-tip={user?.displayName}>
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
-              <img src={user?.photoURL}/>
+        {loading ? (
+          <ReactLoading
+            type={"cylon"}
+            color={"#be154e"}
+            height={"15%"}
+            width={"15%"}
+          />
+        ) : user ? (
+          <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
+                  <img src={user?.photoURL} />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/addToy">
+                    <btn>Add a Toy</btn>
+                  </Link>
+                </li>
+                <li>
+                  <btn onClick={handleLogOut}>Logout</btn>
+                </li>
+              </ul>
             </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <Link to="/myToys"><btn>My Toys</btn></Link>
-            </li>
-            <li>
-              <Link to="/addToy"><btn>Add a Toy</btn></Link>
-            </li>
-            <li>
-              <btn onClick={handleLogOut}>Logout</btn>
-            </li>
-          </ul>
-        </div>
-      </div>) :
-      (<Link to="/login">
-      <button className="btn bg-pink-600 border-0">Login</button>
-    </Link>))
-      }
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn bg-pink-600 border-0">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
