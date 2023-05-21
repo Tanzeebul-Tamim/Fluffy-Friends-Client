@@ -73,6 +73,9 @@ const Navbar = () => {
           <li>
             <ActiveLink to="/blogs">Blogs</ActiveLink>
           </li>
+          <li>
+            <ActiveLink to="/register">Register</ActiveLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
