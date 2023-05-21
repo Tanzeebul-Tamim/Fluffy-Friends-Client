@@ -10,9 +10,21 @@ const GallerySection = () => {
             alt=""
           />
         </div>
-        <div>
+        <div className="grid gap-1 grid-cols-2">
           <img
             src="https://cb.scene7.com/is/image/Crate/JellycatBshflGiraffeMdSSS23_VND/$web_pdp_main_carousel_med$/230328132147/jellycat-medium-bashful-giraffe-kids-stuffed-animal.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/DashingDogMedSSF21/$web_pdp_main_carousel_med$/210519164026/jellycat-dashing-dog.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/Plush_Bunny_WH/$web_pdp_main_carousel_med$/220913134659/jellycat-white-bunny-stuffed-animal.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/MellowMallowPigSSF20_VND/$web_pdp_main_carousel_med$/200507145300/jellycat-mellow-mallow-pig.jpg"
             alt=""
           />
         </div>
@@ -42,9 +54,21 @@ const GallerySection = () => {
             alt=""
           />
         </div>
-        <div>
+        <div className="grid gap-1 grid-cols-2">
           <img
             src="https://cb.scene7.com/is/image/Crate/JellycatBshLambStfAnmlMdSSF22/$web_pdp_main_carousel_med$/220510115817/jellycat-medium-bashful-lamb-stuffed-animal.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/Plush_MD_Bear_BR/$web_pdp_main_carousel_med$/220913135000/jellycat-medium-brown-bear-stuffed-animal.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/Plush_Sloth/$web_pdp_main_carousel_med$/220913134659/jellycat-sloth-stuffed-animal.jpg"
+            alt=""
+          />
+          <img
+            src="https://cb.scene7.com/is/image/Crate/JellycatBashfulWdlndBunnySHS19/$web_pdp_main_carousel_med$/190411135132/jellycat-bashful-woodland-bunny.jpg"
             alt=""
           />
         </div>

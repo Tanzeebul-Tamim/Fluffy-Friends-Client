@@ -3,13 +3,13 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
-    <div className="container mx-auto mt-16">
-        <h1 className="text-center mb-6 font-bold text-4xl">Hear What Our Customers Say !</h1>
+    <div className="container mx-auto my-16">
+        <h1 className="text-center mb-6 font-bold text-4xl">Hear What Our <br className="flex lg:hidden" /> Customers Say !</h1>
 
       <div className="grid lg:gap-0 gap-3 grid-cols-1 lg:grid-cols-4">
 
         <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
-          <div className="mb-4 flex gap-4 items-center justify-start">
+          <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
                 className="mask mask-hexagon"
@@ -40,7 +40,7 @@ const Testimonials = () => {
         </div>
 
         <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
-          <div className="mb-4 flex gap-4 items-center justify-start">
+          <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
                 className="mask mask-hexagon"
@@ -49,7 +49,7 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <h2 className="mb-3 text-xl font-bold">Michael Rodriguez</h2>
+              <h2 className="mb-3 text-xl font-bold">Michael Tedoldi</h2>
               <div className="text-3xl gap-3 text-amber-400 flex justify-end">
                 <span>4.5</span>
                 <FaStar></FaStar>
@@ -71,7 +71,7 @@ const Testimonials = () => {
         </div>
 
         <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
-          <div className="mb-4 flex gap-4 items-center justify-start">
+          <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
                 className="mask mask-hexagon"
@@ -101,7 +101,7 @@ const Testimonials = () => {
         </div>
 
         <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
-          <div className="mb-4 flex gap-4 items-center justify-start">
+          <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
                 className="mask mask-hexagon"
