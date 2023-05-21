@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const ActiveLink = ({to, children}) => {
-  console.log(to)
   return (
     <NavLink
       to={to}

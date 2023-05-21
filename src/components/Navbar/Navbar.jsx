@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import ActiveLink from "../../activeLink/ActiveLink";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/Authprovider";
+import ReactLoading from 'react-loading';
 
 const Navbar = () => {
+
+  const { user, logOut, loading } = useContext(AuthContext);
+  console.log(user)
+  const handleLogOut = () => {
+    logOut().then().catch(error => console.error(error));
+  }
+
   return (
     <div className="lg:py-4 header lg:px-6 navbar text-lg bg-base-200">
       <div className="navbar-start">
@@ -34,12 +44,6 @@ const Navbar = () => {
               <ActiveLink to="/allToys">All Toys</ActiveLink>
             </li>
             <li>
-              <ActiveLink to="/myToys">My Toys</ActiveLink>
-            </li>
-            <li>
-              <ActiveLink to="/addToy">Add a Toy</ActiveLink>
-            </li>
-            <li>
               <ActiveLink to="/blogs">Blogs</ActiveLink>
             </li>
           </ul>
@@ -65,12 +69,6 @@ const Navbar = () => {
             <ActiveLink to="/allToys">All Toys</ActiveLink>
           </li>
           <li>
-            <ActiveLink to="/myToys">My Toys</ActiveLink>
-          </li>
-          <li>
-            <ActiveLink to="/addToy">Add a Toy</ActiveLink>
-          </li>
-          <li>
             <ActiveLink to="/blogs">Blogs</ActiveLink>
           </li>
           <li>
@@ -79,32 +77,36 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login">
-          <button className="btn bg-pink-600 border-0">Login</button>
-        </Link>
-        {/* <div className="tooltip tooltip-bottom" data-tip="hello">
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 tooltip rounded-full">
-                <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000"/>
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">Profile</a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div> */}
+       {
+        loading ? (<ReactLoading type={"cylon"} color={"#be154e"} height={'15%'} width={'15%'} />) :  
+        (user ? 
+        (<div className="tooltip tooltip-left" data-tip={user?.displayName}>
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
+              <img src={user?.photoURL}/>
+            </div>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <Link to="/myToys"><btn>My Toys</btn></Link>
+            </li>
+            <li>
+              <Link to="/addToy"><btn>Add a Toy</btn></Link>
+            </li>
+            <li>
+              <btn onClick={handleLogOut}>Logout</btn>
+            </li>
+          </ul>
+        </div>
+      </div>) :
+      (<Link to="/login">
+      <button className="btn bg-pink-600 border-0">Login</button>
+    </Link>))
+      }
       </div>
     </div>
   );
