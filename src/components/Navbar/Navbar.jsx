@@ -57,7 +57,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-6 text-xl font-extralight text-pink-600 menu-horizontal px-1">
+        <ul className="flex gap-6 text-xl font-extralight text-pink-500 menu-horizontal px-1">
           <li>
             <ActiveLink to="/">Home</ActiveLink>
           </li>

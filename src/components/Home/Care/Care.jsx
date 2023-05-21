@@ -1,7 +1,8 @@
 const Care = () => {
   return (
-    <div className="container mx-auto mt-7 lg:mt-16">
-         <h1 className="text-center mb-7 lg:mb-16 font-bold text-4xl">Stuffed Toy Care</h1>
+    <div className="container mx-auto mt-7 lg:my-20">
+
+         <h1 className="text-center text-pink-600 mb-7 lg:mb-8 font-bold text-4xl">Stuffed Toy Care</h1>
 
       <div className="mx-6 gap-10 grid lg:grid-cols-2 grid-cols-1">
         <div className="flex flex-col lg:flex-row gap-3 items-center">
@@ -12,10 +13,10 @@ const Care = () => {
             alt=""
           />
           <div className="text-center lg:text-end">
-            <h1 className="text-2xl font-bold mb-4">
+            <h1 className="text-2xl text-pink-600 font-bold mb-4">
               Washing and Cleaning Guide
             </h1>
-            <p>
+            <p className="text-pink-700">
               Learn the best practices for washing and cleaning your stuffed
               toys to ensure they stay fresh, hygienic, and looking their best.
               Discover suitable cleaning methods for different types of
@@ -32,10 +33,10 @@ const Care = () => {
             alt=""
           />
           <div className="text-center lg:text-end">
-            <h1 className="text-2xl font-bold mb-4">
+            <h1 className="text-2xl text-pink-600 font-bold mb-4">
               Storage Tips for Longevity
             </h1>
-            <p>
+            <p className="text-pink-700">
               Find out how to properly store your stuffed toys to preserve their
               softness, colors, and overall quality. Learn about suitable
               storage options, such as breathable containers or hanging
@@ -52,10 +53,10 @@ const Care = () => {
             alt=""
           />
           <div className="text-center lg:text-end">
-            <h1 className="text-2xl font-bold mb-4">
+            <h1 className="text-2xl text-pink-600 font-bold mb-4">
               Repair and Restoration Techniques
             </h1>
-            <p>
+            <p className="text-pink-700">
               Discover helpful tips and techniques to repair and restore your
               beloved stuffed toys. Whether it&apos;s fixing a loose seam,
               replacing a damaged button, or re-stuffing a toy, this guide will
@@ -72,10 +73,10 @@ const Care = () => {
             alt=""
           />
           <div className="text-center lg:text-end">
-            <h1 className="text-2xl font-bold mb-4">
+            <h1 className="text-2xl text-pink-600 font-bold mb-4">
               Preventing Common Issues
             </h1>
-            <p>
+            <p className="text-pink-700">
               Learn how to prevent common issues that can affect stuffed toys,
               such as fading colors, flattened stuffing, and odors. Explore
               preventive measures like regular spot cleaning, minimizing sun

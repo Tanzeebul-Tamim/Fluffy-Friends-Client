@@ -11,28 +11,28 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title text-pink-800 lg:text-pink-100">Opening Hours</span>
-          <span>Monday - Friday: 8:00 AM - 10:00 PM</span>
-          <span>Saturday: 10:00 AM - 11:00 PM</span>
-          <span>Sunday: 12:00 PM - 9:00 PM</span>
+          <span className="text-pink-800">Monday - Friday: 8:00 AM - 10:00 PM</span>
+          <span className="text-pink-800">Saturday: 10:00 AM - 11:00 PM</span>
+          <span className="text-pink-800">Sunday: 12:00 PM - 9:00 PM</span>
         </div>
         <div>
           <span className="footer-title text-pink-800 lg:text-pink-600">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="text-pink-800 link link-hover">Branding</a>
+          <a className="text-pink-800 link link-hover">Design</a>
+          <a className="text-pink-800 link link-hover">Marketing</a>
+          <a className="text-pink-800 link link-hover">Advertisement</a>
         </div>
         <div>
           <span className="footer-title text-pink-800 lg:text-pink-700">Contact Us</span>
-          <span>Level-4, 34, Awal Centre, Banani <br />Dhaka</span>
-          <span> Phone: +8801715-456789</span>
-          <span>Email:{" "}<a className="underline" id="email" href="">info@fluffy-friends.com</a></span>
+          <span className="text-pink-800">Level-4, 34, Awal Centre, Banani <br />Dhaka</span>
+          <span className="text-pink-800"> Phone: +8801715-456789</span>
+          <span className="text-pink-800">Email:{" "}<a className="underline" id="email" href="">info@fluffy-friends.com</a></span>
         </div>
         <div>
           <span className="footer-title text-pink-800 lg:text-pink-800">Legal</span>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <a className="text-pink-800 link link-hover">Terms of use</a>
+          <a className="text-pink-800 link link-hover">Privacy policy</a>
+          <a className="text-pink-800 link link-hover">Cookie policy</a>
         </div>
       </footer>
       <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
@@ -42,13 +42,13 @@ const Footer = () => {
             src="https://i.ibb.co/ByY5P3X/icon.png"
             alt=""
           />
-          <p>
+          <p className="text-pink-800">
             FluffyFriends Ltd. <br />
             Providing quality toys since 1992
           </p>
         </div>
         <div>
-          <h4>
+          <h4 className="text-pink-800">
             © 2023 The FluffyFriends. All rights reserved. Designed by
             <a
               href="https://www.facebook.com/tanzeebul.tamim"

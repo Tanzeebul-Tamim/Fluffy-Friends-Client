@@ -1,7 +1,7 @@
 const GallerySection = () => {
   return (
     <div className="lg:my-20 my-10">
-        <h1 className="text-center font-bold mb-6 text-2xl lg:text-4xl">Explore Our Cuddly Creations</h1>
+        <h1 className="text-center text-pink-600 font-bold mb-6 text-2xl lg:text-4xl">Explore Our Cuddly Creations</h1>
       <div className="lg:container gap-1 mx-4 lg:mx-auto grid grid-cols-4">
         <div>
           <img
