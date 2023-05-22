@@ -4,11 +4,13 @@ import Footer from "../components/Footer/Footer";
 import './Main.css';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 
 const Main = () => {
     return (
         <div style={{overflowX: "hidden"}} className="main">
+            <ScrollToTop></ScrollToTop>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

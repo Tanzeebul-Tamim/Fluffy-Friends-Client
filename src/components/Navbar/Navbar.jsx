@@ -98,9 +98,10 @@ const Navbar = () => {
             width={"15%"}
           />
         ) : user ? (
-          <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+          <div className="tooltip flex items-center gap-2 tooltip-left" data-tip={user?.displayName}>
+            <small className="text-white py-1 px-2 rounded-full bg-pink-400">{user.email}</small>
             <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <label tabIndex={0} className="btn flex btn-ghost btn-circle avatar">
                 <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
                   <img src={user?.photoURL} />
                 </div>
