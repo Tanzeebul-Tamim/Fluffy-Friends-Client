@@ -16,16 +16,29 @@ const AddToy = () => {
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const newToy = { photo, productName, sellerName, sellerEmail, category, price, rating, quantity, description }
-    console.log(newToy)
+    const newToy = {
+      photo,
+      productName,
+      sellerName,
+      sellerEmail,
+      category,
+      price,
+      rating,
+      quantity,
+      description,
+    };
+    console.log(newToy);
   };
 
   return (
     <div className="my-16 flex flex-col items-center container mx-auto">
       <div className="text-center">
-          <h1 className="text-5xl text-pink-700 mb-5 font-bold">Add a New Toy</h1>
-        </div>
-      <form onSubmit={handleAddToy} className="card w-2/5 shadow-2xl bg-base-200">
+        <h1 className="text-5xl text-pink-700 mb-5 font-bold">Add a New Toy</h1>
+      </div>
+      <form
+        onSubmit={handleAddToy}
+        className="card w-2/5 shadow-2xl bg-base-200"
+      >
         <div className="card-body">
           <div className="grid grid-col-2">
             <div className="grid grid-cols-2 gap-3">
@@ -126,7 +139,8 @@ const AddToy = () => {
                 </label>
                 <input
                   type="number"
-                  min="0"                  required
+                  min="0"
+                  required
                   name="price"
                   placeholder="$Product-price"
                   className="border-0 input input-bordered"
@@ -138,8 +152,10 @@ const AddToy = () => {
                 </label>
                 <input
                   type="number"
-                  min="0" max="5"
+                  min="0"
+                  max="5"
                   required
+                  step="any"
                   name="rating"
                   placeholder="Rating (0-5)"
                   className="border-0 input input-bordered"
@@ -147,11 +163,12 @@ const AddToy = () => {
               </div>
               <div className="form-control">
                 <label className="label ">
-                  <span className="label-text">Quantity</span>
+                  <span className="label-text">Available Quantity</span>
                 </label>
                 <input
                   type="number"
-                  min="1"                  required
+                  min="1"
+                  required
                   name="quantity"
                   placeholder="Product-quantity"
                   className="border-0 input input-bordered"

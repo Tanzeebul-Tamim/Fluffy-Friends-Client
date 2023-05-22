@@ -7,7 +7,6 @@ import ReactLoading from "react-loading";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-  console.log(user);
   const handleLogOut = () => {
     logOut()
       .then()
