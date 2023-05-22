@@ -61,7 +61,7 @@ const Login = () => {
 
   return (
     <div className="container flex flex-col items-center my-20 mx-auto">
-      <div className="text-center lg:text-left">
+      <div className="text-center">
         <h1 className="text-5xl text-pink-700 mb-5 font-bold">Login Now!</h1>
       </div>
       <form
@@ -115,9 +115,9 @@ const Login = () => {
             <input type="submit" value="Login" className="btn text-white btn-primary"/>
           </div>
           <p className="mt-3 ms-3">
-            Don&apos;t have an account?{" "}
+            Don&apos;t have an account? Please {" "}
             <Link style={{ textDecoration: "none" }} to="/register">
-              <span className="font-bold text-red-500">Please Register</span>
+              <span className="font-bold text-red-500">Register</span>
             </Link>
           </p>
           <div className="flex justify-center mt-4">

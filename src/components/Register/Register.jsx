@@ -4,6 +4,10 @@ import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../providers/Authprovider";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../../firebase/firebase.config";
+
+const auth = getAuth(app);
 
 const Register = () => {
  
@@ -19,7 +23,14 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photo, password, email);
+    const updateUser = () => {
+      updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: photo
+      })
+      .then(() => {})
+      .catch(error => console.error(error));
+    }
 
     setError("");
 
@@ -60,6 +71,7 @@ const Register = () => {
             setTimeout(function() {
                 window.location.href = "/login";
               }, 2000);
+            updateUser();  
         })
         .catch(error => {
             console.error(error);
@@ -79,7 +91,7 @@ const Register = () => {
 
   return (
       <div className="container flex flex-col items-center my-10 mx-auto">
-        <div className="text-center lg:text-left">
+        <div className="text-center">
           <h1 className="text-5xl text-pink-700 mb-5 font-bold">Register Now!</h1>
         </div>
         <form onSubmit={handleRegister} className="card w-2/5 shadow-2xl bg-base-200">
@@ -101,7 +113,7 @@ const Register = () => {
                 <span className="label-text">Photo URL</span>
               </label>
               <input
-                type="text"
+                type="url"
                 required
                 name="photo"
                 placeholder="Enter your photo url"
@@ -157,9 +169,9 @@ const Register = () => {
               <input type="submit" value="Register" className="btn text-white btn-primary"/>
             </div>
             <p className="mt-3 ms-3">
-              Already have an account?{" "}
+              Already have an account? Please{" "}
             <Link style={{ textDecoration: "none" }} to="/login">
-              <span className="font-bold text-red-500">Please Login</span>
+              <span className="font-bold text-red-500">Login</span>
             </Link>
           </p>
           </div>

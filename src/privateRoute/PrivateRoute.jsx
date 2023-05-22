@@ -9,8 +9,8 @@ const PrivateRoute = ({children}) => {
 
     if(loading) {
         return (
-            <div style={{height: "1000px"}} className="d-flex justify-content-center align-items-center">
-                <ReactLoading type={"bubbles"} color={"#ffc107"} height={'20%'} width={'20%'} />
+            <div style={{height: "700px"}} className="flex justify-center items-center">
+                <ReactLoading type={"bars"} color={"#f13372"} height={'20%'} width={'20%'} />
             </div>
         );
     }

@@ -94,7 +94,7 @@ const Navbar = () => {
         {loading ? (
           <ReactLoading
             type={"cylon"}
-            color={"#be154e"}
+            color={"#f13372"}
             height={"15%"}
             width={"15%"}
           />
@@ -112,11 +112,11 @@ const Navbar = () => {
               >
                 <li>
                   <Link to="/addToy">
-                    <btn>Add a Toy</btn>
+                    <button>Add a Toy</button>
                   </Link>
                 </li>
                 <li>
-                  <btn onClick={handleLogOut}>Logout</btn>
+                  <button onClick={handleLogOut}>Logout</button>
                 </li>
               </ul>
             </div>
