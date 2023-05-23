@@ -1,19 +1,38 @@
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { BiInfoCircle } from "react-icons/bi";
+import useTitle from "../../hooks/useTitle";
+import Pagination from "./Pagination/Pagination";
 
 const AllToys = () => {
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
   const [isLoading, setIsLoading] = useState(true);
   const [allToys, setAllToys] = useState([]);
+  const {totalToys} = useLoaderData();
+
+  useTitle("| All Toys");
+
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch("http://localhost:5000/allToys")
+  //     .then((res) => res.json())
+  //     .then((data) => setAllToys(data));
+  //   setIsLoading(false);
+  // }, []);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/allToys")
-      .then((res) => res.json())
-      .then((data) => setAllToys(data));
+    async function fetchData() {
+      const response = await fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemsPerPage}`);
+      const data = await response.json();
+      setAllToys(data);
+    }
     setIsLoading(false);
-  }, []);
+    fetchData();
+  }, [currentPage, itemsPerPage]);
 
   return (
     <div>
@@ -36,14 +55,13 @@ const AllToys = () => {
                 Browse Our Exciting Collection of Stuffed Toys
             </h1>
           </div>
-          <table className="mt-5 min-w-full divide-y divide-pink-300">
+          <table className="my-5 min-w-full divide-y divide-pink-300">
             <thead className="bg-pink-300">
               <tr className="text-pink-700">
                 <th
                   scope="col"
-                  className="px-6 flex gap-4 py-3 text-center text-md font-bold uppercase tracking-wider"
+                  className="px-6 py-3 text-center text-md font-bold uppercase tracking-wider"
                 >
-                  <div>Sl. no</div>
                   <div>Image</div>
                 </th>
                 <th
@@ -85,11 +103,10 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody className="bg-transparent divide-y divide-pink-300">
-              {allToys.map((toy, i) => {
+              {allToys.map((toy) => {
                 return (
                   <tr className="text-pink-700" key={toy._id}>
-                    <td scope="col" className="px-6 py-3 items-center gap-12 flex justify-center">
-                        <p>{i+1}</p>
+                    <td scope="col" className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider">
                       <img
                         className="mask mask-squircle"
                         style={{ height: "70px", width: "70px" }}
@@ -131,7 +148,7 @@ const AllToys = () => {
                       className="text-xl"
                     >
                       <Link to={`/toy/${toy._id}`}>
-                        <button className="bg-pink-300 flex items-center gap-1 text-lg p-2 rounded-lg">
+                        <button className="bg-pink-300 hover:text-white hover:bg-pink-400 flex items-center gap-1 text-lg p-2 rounded-lg">
                           <BiInfoCircle /> View Details
                         </button>
                       </Link>
@@ -141,6 +158,13 @@ const AllToys = () => {
               })}
             </tbody>
           </table>
+          <Pagination
+          setItemsPerPage={setItemsPerPage}
+          itemsPerPage={itemsPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+          totalToys={totalToys}>           
+          </Pagination>
         </div>
       )}
     </div>

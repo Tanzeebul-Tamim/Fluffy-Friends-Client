@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
+import { toast } from "react-toastify";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -7,31 +8,56 @@ const AddToy = () => {
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
-    const photo = form.photo.value;
+    const photoURL = form.photo.value;
     const productName = form.productName.value;
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
     const category = form.category.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const quantity = form.quantity.value;
-    const description = form.description.value;
+    const availableQuantity = form.quantity.value;
+    const productDescription = form.description.value;
     const newToy = {
-      photo,
+      photoURL,
       productName,
       sellerName,
       sellerEmail,
       category,
       price,
       rating,
-      quantity,
-      description,
+      availableQuantity,
+      productDescription
+,
     };
-    console.log(newToy);
+    fetch('http://localhost:5000/allToys', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(newToy)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        toast.success(`${productName} has been added!`, {
+          position: "top-left",
+          autoClose: 1100,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+      });
+      form.reset();
+      setTimeout(function() {
+        window.location.href = "/allToys";
+      }, 2000);
+      })
   };
 
   return (
-    <div className="my-16 flex flex-col items-center container mx-auto">
+    <div className="my-10 flex flex-col items-center container mx-auto">
       <div className="text-center">
         <h1 className="text-5xl text-pink-700 mb-5 font-bold">Add a New Toy</h1>
       </div>
@@ -141,6 +167,7 @@ const AddToy = () => {
                   type="number"
                   min="0"
                   required
+                  step="any"
                   name="price"
                   placeholder="$Product-price"
                   className="border-0 input input-bordered"
@@ -187,15 +214,10 @@ const AddToy = () => {
               />
             </div>
           </div>
-          {
-            <p>
-              <span className="text-red-500">error</span>
-            </p>
-          }
           <div className="form-control mt-6">
             <input
               type="submit"
-              value="Login"
+              value="Add Product"
               className="btn text-white btn-primary"
             />
           </div>

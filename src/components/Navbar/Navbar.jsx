@@ -98,27 +98,37 @@ const Navbar = () => {
             width={"15%"}
           />
         ) : user ? (
-          <div className="tooltip flex items-center gap-2 tooltip-left" data-tip={user?.displayName}>
-            <small className="text-white py-1 px-2 rounded-full bg-pink-400">{user.email}</small>
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn flex btn-ghost btn-circle avatar">
-                <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
-                  <img src={user?.photoURL} />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <Link to="/addToy">
-                    <button>Add a Toy</button>
-                  </Link>
-                </li>
-                <li>
-                  <button onClick={handleLogOut}>Logout</button>
-                </li>
-              </ul>
+          <div className="flex items-center gap-2">
+               <small className="text-white py-1 px-2 rounded-full bg-pink-400">
+                {user.email}
+              </small>
+            <div
+              className="tooltip flex items-center gap-2 tooltip-left"
+              data-tip={user?.displayName}
+            >
+              <div className="dropdown dropdown-end">
+                <label
+                  tabIndex={0}
+                  className="btn flex btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 border-2 border-pink-500 tooltip rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to="/addToy">
+                      <button>Add a Toy</button>
+                    </Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogOut}>Logout</button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         ) : (
