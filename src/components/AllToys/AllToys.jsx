@@ -15,14 +15,6 @@ const AllToys = () => {
 
   useTitle("| All Toys");
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   fetch("http://localhost:5000/allToys")
-  //     .then((res) => res.json())
-  //     .then((data) => setAllToys(data));
-  //   setIsLoading(false);
-  // }, []);
-
   useEffect(() => {
     setIsLoading(true);
     async function fetchData() {

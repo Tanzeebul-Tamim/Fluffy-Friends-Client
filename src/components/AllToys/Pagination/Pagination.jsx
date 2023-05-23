@@ -2,7 +2,7 @@ import './Pagination.css';
 
 const Pagination = ({ totalToys, currentPage, setCurrentPage, itemsPerPage, setItemsPerPage }) => {
 
-  const options = [5, 10, 20];
+  const options = [5, 10, 15, 20];
   const totalPages = Math.ceil(totalToys / itemsPerPage);
   const pageNumbers = [];
 
