@@ -4,11 +4,14 @@ import "./Testimonials.css";
 const Testimonials = () => {
   return (
     <div className="container mx-auto my-20">
-        <h1 className="text-center text-pink-600 mb-6 font-bold text-4xl">Hear What Our <br className="flex lg:hidden" /> Customers Say !</h1>
+      <div data-aos="fade">
+        <h1 className="text-center text-pink-600 mb-6 font-bold text-4xl">
+          Hear What Our <br className="flex lg:hidden" /> Customers Say !
+        </h1>
+      </div>
 
       <div className="grid lg:gap-0 gap-3 grid-cols-1 lg:grid-cols-4">
-
-        <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
+        <div data-aos="fade-right" className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
           <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
@@ -18,7 +21,9 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <h2 className="mb-3 text-pink-600 text-xl font-bold">Sarah Thompson</h2>
+              <h2 className="mb-3 text-pink-600 text-xl font-bold">
+                Sarah Thompson
+              </h2>
               <div className="text-3xl gap-3 text-amber-400 flex justify-end">
                 <span>4.7</span>
                 <FaStar></FaStar>
@@ -39,7 +44,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
+        <div data-aos="fade-up" className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
           <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
@@ -49,7 +54,9 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <h2 className="mb-3 text-pink-600 text-xl font-bold">Michael Tedoldi</h2>
+              <h2 className="mb-3 text-pink-600 text-xl font-bold">
+                Michael Tedoldi
+              </h2>
               <div className="text-3xl gap-3 text-amber-400 flex justify-end">
                 <span>4.5</span>
                 <FaStar></FaStar>
@@ -70,7 +77,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
+        <div data-aos="fade-up" className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
           <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
@@ -80,7 +87,9 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <h2 className="mb-3 text-pink-600 text-xl font-bold">Emily Johnson</h2>
+              <h2 className="mb-3 text-pink-600 text-xl font-bold">
+                Emily Johnson
+              </h2>
               <div className="text-3xl gap-3 text-amber-400 flex justify-end">
                 <span>4.3</span>
                 <FaStar></FaStar>
@@ -100,7 +109,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
+        <div data-aos="fade-left" className="justify-self-center w-4/5 testimonial-card p-5 rounded-xl">
           <div className="mb-4 flex gap-4 items-center justify-between">
             <div>
               <img
@@ -110,7 +119,9 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <h2 className="mb-3 text-pink-600 text-xl font-bold">Mark Thompson</h2>
+              <h2 className="mb-3 text-pink-600 text-xl font-bold">
+                Mark Thompson
+              </h2>
               <div className="text-3xl gap-3 text-amber-400 flex justify-end">
                 <span>4.9</span>
                 <FaStar></FaStar>
@@ -130,9 +141,7 @@ const Testimonials = () => {
             </p>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 };

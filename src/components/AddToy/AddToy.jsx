@@ -51,7 +51,7 @@ const AddToy = () => {
       });
       form.reset();
       setTimeout(function() {
-        window.location.href = "/allToys";
+        window.location.href = "/myToys";
       }, 2000);
       })
   };

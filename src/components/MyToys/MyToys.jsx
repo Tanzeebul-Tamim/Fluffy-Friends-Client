@@ -1,25 +1,35 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/Authprovider";
-import { FaPen } from "react-icons/fa";
-import { CgClose } from "react-icons/cg";
-import { Link } from "react-router-dom";
 import ReactLoading from "react-loading";
 import useTitle from "../../hooks/useTitle";
-import Swal from "sweetalert2";
+import ToyRow from "./ToyRow/ToyRow";
 
 const MyToys = () => {
-  const [myToys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
+  const [myToys, setMyToys] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [sortOrder, setSortOrder] = useState("ascending");
   useTitle("| My Toys");
 
   useEffect(() => {
-    setIsLoading(true);
-    fetch(`http://localhost:5000/allToys/email/${user.email}`)
+    fetch(`http://localhost:5000/allToys/email/${user.email}?sort=${sortOrder}`)
       .then((res) => res.json())
-      .then((data) => setMyToys(data));
-    setIsLoading(false);
-  }, []);
+      .then((data) => {
+        setMyToys(data);
+        setIsLoading(false);
+      });
+  }, [user, sortOrder]);
+  
+
+  const handleOptionChange = (event) => {
+    const value = event.target.value;
+    setSortOrder(value);
+  };
+  
+
+  const handleDelete = (deletedToyId) => {
+    setMyToys((prevToys) => prevToys.filter((toy) => toy._id !== deletedToyId));
+  };
 
   if (myToys.length === 0 || !myToys) {
     return (
@@ -51,6 +61,21 @@ const MyToys = () => {
         <div className="text-center">
           <h1 className="text-5xl text-pink-600 mb-5 font-bold">My Toys</h1>
         </div>
+        <select
+          onChange={handleOptionChange}
+          name="category"
+          style={{ cursor: "pointer", outline: "none", border: "none" }}
+          className="border-0 px-3 py-2 rounded-full">
+            <option value="" defaultValue hidden>
+              Sort By
+            </option>
+            <option className="text-slate-800 mb-3" value="ascending">
+              price (Asc)
+            </option>
+            <option className="text-slate-800" value="descending">
+              price (Des)
+            </option>
+        </select>
         <table className="mt-5 min-w-full divide-y divide-pink-300">
           <thead className="bg-pink-300">
             <tr className="text-pink-700">
@@ -99,98 +124,9 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody className="bg-transparent divide-y divide-pink-300">
-            {myToys.map((toy) => {
-              const handleDelete = (id) => {
-                Swal.fire({
-                  title: `Are you sure you want to delete ${toy.productName}?`,
-                  text: "You won't be able to revert this!",
-                  icon: "warning",
-                  showCancelButton: true,
-                  confirmButtonColor: "#3085d6",
-                  cancelButtonColor: "#d33",
-                  confirmButtonText: "Yes, delete it!",
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/allToys/id/${id}`, {
-                      method: "DELETE",
-                    })
-                      .then((res) => res.json())
-                      .then((data) => {
-                        if (data.deletedCount > 0) {
-                          Swal.fire(
-                            "Deleted!",
-                            "Your product has been deleted.",
-                            "success"
-                          );
-                          const remaining = myToys.filter(
-                            (toy) => toy._id !== id
-                          );
-                          setMyToys(remaining);
-                        }
-                      });
-                  }
-                });
-              };
-
+            {myToys.map((toy) => {              
               return (
-                <tr className="text-pink-700" key={toy._id}>
-                  <td scope="col" className="px-6 py-3">
-                    <img
-                      className="mask mask-squircle"
-                      style={{ height: "70px", width: "70px" }}
-                      src={toy.photoURL}
-                    />
-                  </td>
-                  <td
-                    scope="col"
-                    className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider"
-                  >
-                    {toy.productName}
-                  </td>
-                  <td
-                    scope="col"
-                    className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider"
-                  >
-                    {toy.sellerName}
-                  </td>
-                  <td
-                    scope="col"
-                    className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider"
-                  >
-                    {toy.category}
-                  </td>
-                  <td
-                    scope="col"
-                    className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider"
-                  >
-                    ${toy.price}
-                  </td>
-                  <td
-                    scope="col"
-                    className="px-6 py-3 text-center text-md font-medium uppercase tracking-wider"
-                  >
-                    {toy.availableQuantity}
-                  </td>
-                  <td scope="col" className="text-xl">
-                    <div className="flex justify-end me-9 items-center gap-4">
-                      <Link to={`/updateChocolate/${toy._id}`}>
-                        <button
-                          data-tip="Edit Product"
-                          className="tooltip tooltip-top bg-pink-300 hover:text-white hover:bg-pink-400 flex items-center gap-1 text-lg p-2 rounded-lg"
-                        >
-                          <FaPen />
-                        </button>
-                      </Link>
-                      <button
-                        onClick={() => handleDelete(toy._id)}
-                        data-tip="Delete Product"
-                        className="tooltip tooltip-top bg-pink-300 hover:text-white hover:bg-pink-400 flex items-center gap-1 text-lg p-2 rounded-lg"
-                      >
-                        <CgClose />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
+                <ToyRow onDelete={handleDelete} toy={toy} key={toy._id}></ToyRow>
               );
             })}
           </tbody>

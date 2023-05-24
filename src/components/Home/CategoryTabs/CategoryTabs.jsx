@@ -7,19 +7,15 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 const CategoryTabs = ({ allToys }) => {
   const teddy = allToys.filter((toy) => toy.category === "Teddy Bear");
-  const fantasyCreature = allToys.filter(
-    (toy) => toy.category === "Fantasy Creature"
-  );
+  const fantasyCreature = allToys.filter((toy) => toy.category === "Fantasy Creature");
   const farmAnimal = allToys.filter((toy) => toy.category === "Farm Animal");
   const dinosaur = allToys.filter((toy) => toy.category === "Dinosaur");
   const seaCreature = allToys.filter((toy) => toy.category === "Sea Creature");
-  const jungleAnimal = allToys.filter(
-    (toy) => toy.category === "Jungle Animal"
-  );
+  const jungleAnimal = allToys.filter((toy) => toy.category === "Jungle Animal");
   const robot = allToys.filter((toy) => toy.category === "Robot");
   return (
     <div className="container flex flex-col items-center my-24 mx-auto">
-      <h1 className="text-5xl text-pink-500 mb-5 font-bold">
+      <h1 className="lg:text-5xl text-xl text-pink-500 mb-5 font-bold">
         Sort by Categories
       </h1>
       <Tabs>
@@ -34,7 +30,7 @@ const CategoryTabs = ({ allToys }) => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {teddy.map((toy) => {
               return (
                 <div
@@ -89,7 +85,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {fantasyCreature.map((toy) => {
               return (
                 <div
@@ -144,7 +140,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {farmAnimal.map((toy) => {
               return (
                 <div
@@ -199,7 +195,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {dinosaur.map((toy) => {
               return (
                 <div
@@ -254,7 +250,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {seaCreature.map((toy) => {
               return (
                 <div
@@ -309,7 +305,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {jungleAnimal.map((toy) => {
               return (
                 <div
@@ -364,7 +360,7 @@ const CategoryTabs = ({ allToys }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-9 mt-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-9 mt-6">
             {robot.map((toy) => {
               return (
                 <div

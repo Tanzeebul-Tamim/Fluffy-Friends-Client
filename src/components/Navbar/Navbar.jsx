@@ -3,7 +3,7 @@ import "./Navbar.css";
 import ActiveLink from "../../activeLink/ActiveLink";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
-import ReactLoading from "react-loading";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
@@ -91,17 +91,17 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {loading ? (
-          <ReactLoading
-            type={"cylon"}
-            color={"#f13372"}
-            height={"15%"}
-            width={"15%"}
-          />
+          <div className="flex items-center gap-3">
+            <small className="text-pink-300 py-1 px-2 rounded-full bg-pink-300">
+              aaaaaaaaaaaaaa
+            </small>
+            <FaUserCircle className="text-4xl text-pink-300"></FaUserCircle>
+          </div>
         ) : user ? (
           <div className="flex items-center gap-2">
-               <small className="text-white py-1 px-2 rounded-full bg-pink-400">
-                {user.email}
-              </small>
+            <small className="text-white py-1 px-2 rounded-full bg-pink-400">
+              {user.email}
+            </small>
             <div
               className="tooltip flex items-center gap-2 tooltip-left"
               data-tip={user?.displayName}
