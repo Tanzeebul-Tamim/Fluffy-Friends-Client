@@ -50,7 +50,7 @@ const Testimonials = () => {
               <img
                 className="mask mask-hexagon"
                 style={{ width: "90px", height: "90px" }}
-                src="https://thumbs.dreamstime.com/b/square-portrait-1784254.jpg"
+                src="https://members-api.parliament.uk/api/Members/1572/Portrait?cropType=ThreeTwo&webVersion=false"
               />
             </div>
             <div>
@@ -83,7 +83,7 @@ const Testimonials = () => {
               <img
                 className="mask mask-hexagon"
                 style={{ width: "90px", height: "90px" }}
-                src="https://thumbs.dreamstime.com/b/my-portrait-square-1798671.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzarI2fFXqzA57YJpCSRURHda8SxdYDZPqQ&usqp=CAU"
               />
             </div>
             <div>
@@ -115,7 +115,7 @@ const Testimonials = () => {
               <img
                 className="mask mask-hexagon"
                 style={{ width: "90px", height: "90px" }}
-                src="https://thumbs.dreamstime.com/b/closeup-square-portrait-young-bearded-asian-man-outdoor-black-grungy-building-background-vintage-stylized-photo-warm-71498215.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCbKFZ8X3-d6Ss5U5BbisFaFl3RtQLkw4Cmc3De_6msJ09ajX79m-j_lb3qiTkTkoiMv8&usqp=CAU"
               />
             </div>
             <div>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/Authprovider";
 import { Navigate, useLocation } from "react-router-dom";
 import ReactLoading from 'react-loading';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PrivateRoute = ({children}) => {
     const { loading, user } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const PrivateRoute = ({children}) => {
         return children;
     }
 
-    return <Navigate state={{from: location}} to="/login"></Navigate>
+    return <Navigate state={{from: location, showToast: true}} to="/login"></Navigate>
 };
 
 export default PrivateRoute;

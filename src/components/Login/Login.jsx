@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../providers/Authprovider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { setLoading, googleSignIn, signIn } = useContext(AuthContext);
@@ -11,6 +12,21 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   useTitle("| Login");
+
+  useEffect(() => {
+    if (location.state && location.state.showToast) {
+      toast.warning('To view detailed information, you have to login first', {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark"
+      });
+    }
+  }, [location.state]);
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -112,16 +128,24 @@ const Login = () => {
             </p>
           }
           <div className="form-control mt-6">
-            <input type="submit" value="Login" className="btn text-white btn-primary"/>
+            <input
+              type="submit"
+              value="Login"
+              className="btn text-white btn-primary"
+            />
           </div>
           <p className="mt-3 ms-3">
-            Don&apos;t have an account? Please {" "}
+            Don&apos;t have an account? Please{" "}
             <Link style={{ textDecoration: "none" }} to="/register">
               <span className="font-bold text-red-500">Register</span>
             </Link>
           </p>
           <div className="flex justify-center mt-4">
-            <button formNoValidate onClick={handleGoogleSignIn} className="bg-blue-500 text-white rounded-full btn border-0 btn-info flex items-center gap-2 ">
+            <button
+              formNoValidate
+              onClick={handleGoogleSignIn}
+              className="bg-blue-500 text-white rounded-full btn border-0 btn-info flex items-center gap-2 "
+            >
               <FaGoogle />
               <span>Login With Google</span>
             </button>
