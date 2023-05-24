@@ -27,11 +27,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/allToys')
+        loader: () => fetch('https://toy-marketplace-server-puce-ten.vercel.app/allToys')
       },
       {
         path: "blogs",
-        element: <PrivateRoute><Blogs></Blogs></PrivateRoute>
+        element: <Blogs></Blogs>
       },
       {
         path: "register",
@@ -52,12 +52,12 @@ const router = createBrowserRouter([
       {
         path: "allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/totalToys')
+        loader: () => fetch('https://toy-marketplace-server-puce-ten.vercel.app/totalToys')
       },
       {
         path: "toy/:id",
         element:<PrivateRoute><ToyDetail></ToyDetail></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allToys/id/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/id/${params.id}`)
       }
     ]
   },

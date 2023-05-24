@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
 import { toast } from "react-toastify";
+import useTitle from "../../hooks/useTitle";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+
+  useTitle("| Add a Toy");
 
   const handleAddToy = (event) => {
     event.preventDefault();
@@ -29,7 +32,7 @@ const AddToy = () => {
       productDescription
 ,
     };
-    fetch('http://localhost:5000/allToys', {
+    fetch('https://toy-marketplace-server-puce-ten.vercel.app/allToys', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

@@ -12,7 +12,7 @@ const MyToys = () => {
   useTitle("| My Toys");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/email/${user.email}?sort=${sortOrder}`)
+    fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/email/${user.email}?sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);

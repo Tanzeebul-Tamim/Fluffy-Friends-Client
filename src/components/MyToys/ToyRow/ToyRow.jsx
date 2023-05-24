@@ -22,7 +22,7 @@ const ToyRow = ({ toy, onDelete  }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allToys/id/${toy._id}`, {
+        fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/id/${toy._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -41,7 +41,7 @@ const ToyRow = ({ toy, onDelete  }) => {
   };
 
   const handleUpdatePrice = (updatedToy) => {
-    fetch(`http://localhost:5000/allToys/id/${toy._id}`, {
+    fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/id/${toy._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -61,7 +61,7 @@ const ToyRow = ({ toy, onDelete  }) => {
   }
 
   const handleUpdateQuantity = (updatedToy) => {
-    fetch(`http://localhost:5000/allToys/id/${toy._id}`, {
+    fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/id/${toy._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const ToyRow = ({ toy, onDelete  }) => {
   }
 
   const handleUpdateDescription = (updatedToy) => {
-    fetch(`http://localhost:5000/allToys/id/${toy._id}`, {
+    fetch(`https://toy-marketplace-server-puce-ten.vercel.app/allToys/id/${toy._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

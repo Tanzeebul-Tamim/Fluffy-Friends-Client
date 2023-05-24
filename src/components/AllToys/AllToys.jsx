@@ -20,7 +20,7 @@ const AllToys = () => {
     setIsLoading(true);
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/allToys?page=${currentPage}&limit=${itemsPerPage}&search=${searchQuery}`
+        `https://toy-marketplace-server-puce-ten.vercel.app/allToys?page=${currentPage}&limit=${itemsPerPage}&search=${searchQuery}`
       );
       const data = await response.json();
       setAllToys(data);
