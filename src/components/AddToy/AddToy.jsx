@@ -32,7 +32,7 @@ const AddToy = () => {
       productDescription
 ,
     };
-    fetch('https://toy-marketplace-server-puce-ten.vercel.app/allToys', {
+    fetch('https://toy-marketplace-server-puce-ten.vercel.app/allToys', {   
       method: 'POST',
       headers: {
           'content-type': 'application/json'

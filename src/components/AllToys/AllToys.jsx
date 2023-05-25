@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactLoading from "react-loading";
 import { Link, useLoaderData } from "react-router-dom";
 import { BiInfoCircle } from "react-icons/bi";
@@ -11,7 +11,8 @@ const AllToys = () => {
   const [itemsPerPage, setItemsPerPage] = useState(20);
   const [isLoading, setIsLoading] = useState(true);
   const [allToys, setAllToys] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const searchRef = useRef(null);
+  const [search, setSearch] = useState("");
   const { totalToys } = useLoaderData();
 
   useTitle("| All Toys");
@@ -20,33 +21,58 @@ const AllToys = () => {
     setIsLoading(true);
     async function fetchData() {
       const response = await fetch(
-        `https://toy-marketplace-server-puce-ten.vercel.app/allToys?page=${currentPage}&limit=${itemsPerPage}&search=${searchQuery}`
+        `https://toy-marketplace-server-puce-ten.vercel.app/allToys?page=${currentPage}&limit=${itemsPerPage}&search=${search}`
       );
       const data = await response.json();
       setAllToys(data);
       setIsLoading(false);
     }
     fetchData();
-  }, [currentPage, itemsPerPage, searchQuery]);
+  }, [currentPage, itemsPerPage, search]);
 
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-    setCurrentPage(1); // Reset the current page to 1 when performing a new search
+  const handleSearch = () => {
+    setSearch(searchRef.current.value);
   };
 
   return (
     <div>
       {isLoading ? (
-        <div
-          style={{ height: "700px" }}
-          className="flex justify-center items-center"
-        >
-          <ReactLoading
-            type={"bars"}
-            color={"#f13372"}
-            height={"20%"}
-            width={"20%"}
-          />
+        <div className="container flex flex-col items-center my-20 mx-auto">
+          <div className="text-center">
+            <h1 className="text-5xl text-pink-600 mb-5 font-bold">
+              Browse Our Exciting Collection of Stuffed Toys
+            </h1>
+            <div className="relative mb-2">
+              <input
+                onChange={handleSearch}
+                ref={searchRef}
+                type="text"
+                placeholder="Search by Toy Name"
+                className="py-3 px-5 outline-none rounded-full w-1/2"
+              />
+              <button>
+                <BsSearch
+                  style={{
+                    position: "absolute",
+                    top: "30%",
+                    right: "270px",
+                    fontSize: "20px",
+                  }}
+                ></BsSearch>
+              </button>
+            </div>
+            <div
+              style={{ height: "700px" }}
+              className="flex justify-center items-center"
+            >
+              <ReactLoading
+                type={"bars"}
+                color={"#f13372"}
+                height={"20%"}
+                width={"20%"}
+              />
+            </div>
+          </div>
         </div>
       ) : (
         <div className="container flex flex-col items-center my-20 mx-auto">
@@ -56,21 +82,22 @@ const AllToys = () => {
             </h1>
             <div className="relative mb-2">
               <input
-                type="text"
-                value={searchQuery}
                 onChange={handleSearch}
+                ref={searchRef}
+                type="text"
                 placeholder="Search by Toy Name"
                 className="py-3 px-5 outline-none rounded-full w-1/2"
               />
-              <BsSearch
-                style={{
-                  position: "absolute",
-                  top: "30%",
-                  right: "270px",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                }}
-              ></BsSearch>
+              <button>
+                <BsSearch
+                  style={{
+                    position: "absolute",
+                    top: "30%",
+                    right: "270px",
+                    fontSize: "20px",
+                  }}
+                ></BsSearch>
+              </button>
             </div>
           </div>
           <table className="my-5 min-w-full divide-y divide-pink-300">
