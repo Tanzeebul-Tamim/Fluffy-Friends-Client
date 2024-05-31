@@ -9,7 +9,7 @@ Welcome to the client-side repository of Fluffy Friends, a soft toy marketplace.
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
-- [Also checkout Fluffy-Friends-Server](#also-checkout-fluffy-friends-server)
+- [Also checkout Fluffy Friends Server](#also-checkout-fluffy-friends-server)
 - [Contributing](#contributing)
 
 ## Website Features
@@ -27,6 +27,11 @@ Welcome to the client-side repository of Fluffy Friends, a soft toy marketplace.
 </p>
 
 <br/>
+
+- ***Footer:*** A meaningful footer is present on all pages, including a mini map, ensuring consistency and providing essential links or information.
+<p align="center">
+  <img src="public/footer.png" width="550" alt="Banner"/>
+</p>
 
 - ***Responsive Navigation Bar:*** The navbar includes the website logo, Home, All Toys, My Toys, Blogs, Register and User Profile Picture. It dynamically shows the Login button or user profile picture based on user authentication status.
 <p align="center">
@@ -69,9 +74,16 @@ Welcome to the client-side repository of Fluffy Friends, a soft toy marketplace.
 
 <br/>
 
+- ***404 Page:*** A custom 404 page is created with an added picture, enhancing the user experience in case of page not found errors.
+<p align="center">
+  <img src="public/not-found.png" width="550" alt="Banner"/>
+</p>
+
+<br/>
+
 ## Live Deployment
 
-Check out the live site: https://fluffy-friends-3152f.web.app/
+Check out the live site [at this following URL](https://fluffy-friends-3152f.web.app/)
 
 ## Used Packages and Technologies
 
@@ -102,7 +114,7 @@ Check out the live site: https://fluffy-friends-3152f.web.app/
 1. Clone the repository:
    ```sh
    git clone https://github.com/Tanzeebul-Tamim/Fluffy-Friends-Client
-   cd fluffy-friends-client
+   cd Fluffy-Friends-Client
    ```
 2. Install dependencies:
    ```sh
@@ -122,8 +134,9 @@ Check out the live site: https://fluffy-friends-3152f.web.app/
 npm run dev
 ```
 
-## Also checkout Fluffy Friends Server
-Visit the server-side repository of the Fluffy Friends website - https://github.com/Tanzeebul-Tamim/Fluffy-Friends-Server
+## Also checkout Fluffy-Friends-Server
+
+Visit the server-side repository of [Fluffy Friends](https://github.com/Tanzeebul-Tamim/Fluffy-Friends-Server) website
 
 ## Contributing
 
