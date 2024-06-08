@@ -11,6 +11,7 @@ Welcome to the client-side repository of Fluffy Friends, a soft toy marketplace.
 - [Running the Project](#running-the-project)
 - [Also checkout Fluffy Friends Server](#also-checkout-fluffy-friends-server)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Website Features
 
