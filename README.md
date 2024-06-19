@@ -1,4 +1,4 @@
-# Fluffy Friends - Client Side
+# <img src="./public/icon.png" alt="Logo" width="70"/> Fluffy Friends - Client Side
 
 Welcome to the client-side repository of Fluffy Friends, a soft toy marketplace.
 
